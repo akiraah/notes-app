@@ -5,7 +5,8 @@
   "main": "serverless.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint . --ext .js/"
   },
   "engines": {
     "node": ">=14.15.0"
@@ -26,9 +27,11 @@
     "babel-loader": "^9.1.2",
     "cache-loader": "^4.1.0",
     "esbuild": "^0.14.11",
-    "esbuild-loader": "^2.21.0",
     "fork-ts-checker-webpack-plugin": "^7.3.0",
     "json-schema-to-ts": "^1.5.0",
+    "prettier": "^2.8.3",
+    "prettier-eslint": "^15.0.1",
+    "prettier-eslint-cli": "^7.1.0",
     "serverless": "^3.0.0",
     "serverless-esbuild": "^1.23.3",
     "serverless-webpack": "^5.11.0",

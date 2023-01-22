@@ -1,9 +1,11 @@
 const serverlessWebpack = require('serverless-webpack')
 const path = require('path')
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   mode: 'development',
   entry: serverlessWebpack.lib.entries,
+  externals: ['aws-sdk'],
   module: {
     rules: [
       {
@@ -25,6 +27,6 @@ module.exports = {
   output: {
     libraryTarget: 'commonjs',
     path: path.resolve(__dirname, '.webpack'),
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
 }
