@@ -12,7 +12,10 @@
     "paths": {
       "@functions/*": ["src/handler/*"],
       "@libs/*": ["src/libs/*"]
-    }
+    },
+    "types": [
+      "node"
+    ]
   },
   "include": ["src/**/*.ts", "serverless.ts"],
   "exclude": [
@@ -20,7 +23,8 @@
     ".serverless/**/*",
     ".webpack/**/*",
     "_warmup/**/*",
-    ".vscode/**/*"
+    ".vscode/**/*",
+    "**/*.test.ts"
   ],
   "ts-node": {
     "require": ["tsconfig-paths/register"]
