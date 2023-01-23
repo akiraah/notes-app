@@ -11,8 +11,8 @@ jobs:
       node_version: 14.x
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js $node_version
+      - name: Use Node.js ${node_version}
         uses: actions/setup-node@v3
         with:
-          node-version: $node_version
+          node-version: ${node_version}
       - run: cd api && yarn
