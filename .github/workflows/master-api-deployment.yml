@@ -5,10 +5,11 @@ on:
     branches:
       - 'master'
 jobs:
-  build:
+  build-and-deploy:
+    name: build and deploy
     runs-on: ubuntu-latest
     strategy:
-      matrix: 
+      matrix:
         node-version: [14.x]
     steps:
       - uses: actions/checkout@v3
@@ -16,6 +17,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      # - name: install npm dependencies
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: ${{ matrix.node-version }}
+      # - run: cd api && yarn
       - name: serverless deploy
         uses: serverless/github-action@v3.1
         with:

@@ -3,7 +3,7 @@ import type { AWS } from '@serverless/typescript'
 const serverlessConfiguration: AWS = {
   service: 'sls-notes-api',
   frameworkVersion: '3',
-  plugins: ['serverless-webpack','serverless-esbuild'],
+  plugins: ['serverless-webpack'],
   provider: {
     name: 'aws',
     region: 'eu-west-2',
@@ -48,7 +48,7 @@ const serverlessConfiguration: AWS = {
   custom: {
     webpack: {
       webpackConfig: 'webpack.config.js',
-      includeModules: false,
+      includeModules: true,
       packager: 'yarn',
       excludeFiles: 'src/**/*.test.ts',
       forceExclude: ['aws-sdk']
