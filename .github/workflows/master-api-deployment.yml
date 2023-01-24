@@ -17,13 +17,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: install npm dependencies
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: ${{ matrix.node-version }}
-      - name: install npm
+      - name: install npm dependencies
         working-directory: api
-        run: yarn   
+        run: yarn
       - name: serverless deploy
         uses: serverless/github-action@v3.1
         with:

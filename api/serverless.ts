@@ -48,7 +48,7 @@ const serverlessConfiguration: AWS = {
   custom: {
     webpack: {
       webpackConfig: 'webpack.config.js',
-      includeModules: true,
+      includeModules: false,
       packager: 'yarn',
       excludeFiles: 'src/**/*.test.ts',
       forceExclude: ['aws-sdk']

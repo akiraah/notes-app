@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals')
 module.exports = {
   mode: 'development',
   entry: serverlessWebpack.lib.entries,
-  externals: ['aws-sdk', nodeExternals({ allowlist: ['ts-node'] })],
+  externals: ['aws-sdk', nodeExternals()],
   module: {
     rules: [
       {
