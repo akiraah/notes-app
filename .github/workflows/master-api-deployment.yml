@@ -23,7 +23,7 @@ jobs:
       #     node-version: ${{ matrix.node-version }}
       - name: install npm
         working-directory: api
-        run: yarn && sls package --stage dev
+        run: yarn   
       - name: serverless deploy
         uses: serverless/github-action@v3.1
         with:
