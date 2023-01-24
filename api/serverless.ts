@@ -70,10 +70,10 @@ const serverlessConfiguration: AWS = {
               AttributeName: 'timestamp',
               AttributeType: 'N',
             },
-            // {
-            //   AttributeName: 'note_id',
-            //   AttributeType: 'S',
-            // },
+            {
+              AttributeName: 'note_id',
+              AttributeType: 'S',
+            },
           ],
           KeySchema: [
             {
@@ -89,22 +89,22 @@ const serverlessConfiguration: AWS = {
             ReadCapacityUnits: 1,
             WriteCapacityUnits: 1,
           },
-          // GlobalSecondaryIndexes: [
-          //   {
-          //     IndexName: 'note_id-index',
-          //     KeySchema:  {
-          //       AttributeName: 'note_id',
-          //       KeyType: 'HASH',
-          //     },
-          //     Projection: {
-          //       ProjectionType: 'ALL',
-          //     },
-          //     ProvisionedThroughput: {
-          //       ReadCapacityUnits: 1,
-          //       WriteCapacityUnits: 1,
-          //     },
-          //   },
-          // ],
+          GlobalSecondaryIndexes: [
+            {
+              IndexName: 'note_id-index',
+              KeySchema:  {
+                AttributeName: 'note_id',
+                KeyType: 'HASH',
+              },
+              Projection: {
+                ProjectionType: 'ALL',
+              },
+              ProvisionedThroughput: {
+                ReadCapacityUnits: 1,
+                WriteCapacityUnits: 1,
+              },
+            },
+          ],
         },
       },
     },
