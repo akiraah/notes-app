@@ -51,7 +51,7 @@ const serverlessConfiguration: AWS = {
       includeModules: false,
       packager: 'yarn',
       excludeFiles: 'src/**/*.test.ts',
-      forceExclude: ['aws-sdk']
+      forceExclude: ['aws-sdk'],
     },
   },
   resources: {
@@ -92,10 +92,12 @@ const serverlessConfiguration: AWS = {
           GlobalSecondaryIndexes: [
             {
               IndexName: 'note_id-index',
-              KeySchema:  {
-                AttributeName: 'note_id',
-                KeyType: 'HASH',
-              },
+              KeySchema: [
+                {
+                  AttributeName: 'note_id',
+                  KeyType: 'HASH',
+                },
+              ],
               Projection: {
                 ProjectionType: 'ALL',
               },
