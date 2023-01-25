@@ -5,7 +5,7 @@ const nodeExternals = require('webpack-node-externals')
 module.exports = {
   mode: 'development',
   entry: serverlessWebpack.lib.entries,
-  externals: ['aws-sdk', nodeExternals()],
+  externals: ['aws-sdk', nodeExternals()], // force to exclude aws-sdk + other modules that aren't in use.
   module: {
     rules: [
       {

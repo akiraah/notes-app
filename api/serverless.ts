@@ -33,11 +33,22 @@ const serverlessConfiguration: AWS = {
   // import the function via paths
   functions: {
     createNote: {
-      handler: 'src/handlers/handler.createNote',
+      handler: 'src/handlers/createNote.handler',
       events: [
         {
           http: {
             method: 'post',
+            path: 'note',
+          },
+        },
+      ],
+    },
+    getNote: {
+      handler: 'src/handlers/getNote.handler',
+      events: [
+        {
+          http: {
+            method: 'get',
             path: 'note',
           },
         },
@@ -48,7 +59,7 @@ const serverlessConfiguration: AWS = {
   custom: {
     webpack: {
       webpackConfig: 'webpack.config.js',
-      includeModules: false,
+      includeModules: true,
       packager: 'yarn',
       excludeFiles: 'src/**/*.test.ts',
       forceExclude: ['aws-sdk'],
