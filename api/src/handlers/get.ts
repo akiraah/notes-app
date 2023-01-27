@@ -1,6 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
 import * as AWS from 'aws-sdk'
-import { QueryInput } from '@aws-sdk/client-dynamodb'
 
 AWS.config.apiVersions = {
   dynamodb: '2012-08-10',

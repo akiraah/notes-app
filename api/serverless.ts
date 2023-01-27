@@ -33,7 +33,7 @@ const serverlessConfiguration: AWS = {
   // import the function via paths
   functions: {
     createNote: {
-      handler: 'src/handlers/createNote.handler',
+      handler: 'src/handlers/create.handler',
       events: [
         {
           http: {
@@ -44,12 +44,23 @@ const serverlessConfiguration: AWS = {
       ],
     },
     getNote: {
-      handler: 'src/handlers/getNote.handler',
+      handler: 'src/handlers/get.handler',
       events: [
         {
           http: {
             method: 'get',
             path: 'note',
+          },
+        },
+      ],
+    },
+    deleteNote: {
+      handler: 'src/handlers/delete.handler',
+      events: [
+        {
+          http: {
+            method: 'delete',
+            path: 'note/{id}',
           },
         },
       ],
